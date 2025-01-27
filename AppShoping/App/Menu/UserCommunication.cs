@@ -242,7 +242,7 @@ public class UserCommunication : IUserCommunication
         Console.Clear();
         Console.WriteLine("\n<--Pierwszy produkt o podanej cenie-->");
         var firstPrice = _purchaseProvider.FirstOrDefaultByPriceWithDefault(price);
-        Console.WriteLine($"\n- Sklep {firstPrice.NameShop} : produkt {firstPrice.Name} cena {firstPrice.Price:C}");
+        Console.WriteLine($"\n- Sklep {firstPrice.ShopName} : produkt {firstPrice.Name} cena {firstPrice.Price:C}");
     }
 
 
@@ -357,7 +357,7 @@ public class UserCommunication : IUserCommunication
                                     (products, purchase) => new
                                     {
                                         products.ProductName,
-                                        purchase.NameShop,
+                                        purchase.ShopName,
                                         purchase.Price,
                                         purchase.Promotion,
 
@@ -369,7 +369,7 @@ public class UserCommunication : IUserCommunication
             Console.WriteLine($"{price.ProductName}");
             Console.WriteLine($"\t Price : {price.Price}");
             Console.WriteLine($"\t Promotion : {price.Promotion}");
-            Console.WriteLine($"\t Shop:{price.NameShop}");
+            Console.WriteLine($"\t Shop:{price.ShopName}");
 
         }
     }
@@ -399,24 +399,29 @@ public class UserCommunication : IUserCommunication
 
     private static void ExportToXml(List<Purchase> purchase)
     {
+
         var document = new XDocument();
-        var xmlProducts = new XElement("ListaProduktow", purchase
-            .Select(x =>
-            new XElement("NazwaSklepu",
-                new XAttribute("NazwaSklepu", x.NameShop!),
-                new XAttribute("NazwaProduktu", x.Name!),
-                    new XElement("Cena", x.Price),
-                    new XElement("ProduktBio", x.BioFood),
-                    new XElement("Promocja", x.Promotion),
-            new XElement("KwotaWydanaWSklepie",
-                    new XAttribute(x.NameShop!, purchase.Where(c => c.NameShop == x.NameShop).Sum(x => x.Price)),
-                        new XElement("Produkty", purchase.Where(c => c.NameShop == x.NameShop)
-                            .Select(x => new XElement("ListaZakupow",
-                             new XAttribute("Produkt", x.Name!),
-                             new XAttribute("cena", x.Price))
+        var xmlProducts = new XElement("ProductsList", purchase
+            .Select(x => new XElement("ProductList",
+                new XAttribute("ShopName", x.ShopName!),
+                new XAttribute("ProductName", x.Name!),
+                new XElement("Price", Math.Round(x.Price, 2)),
+                new XElement("OrganicProduct", x.BioFood),
+                new XElement("Promotion", x.Promotion),
+                new XElement("AmountSpentInShop",
+                    new XAttribute("TotalSpent",
+                        Math.Round(purchase.Where(c => c.ShopName == x.ShopName).Sum(c => c.Price), 2)),
+                    new XElement("Purchases",
+                        purchase.Where(c => c.ShopName == x.ShopName)
+                            .Select(p => new XElement("PurchaseList",
+                                new XAttribute("Product", p.Name!),
+                                new XAttribute("Price", Math.Round(p.Price, 2))
+                            ))
+                    )
+                )
+            ))
+        );
 
-
-            ))))));
 
         document.Add(xmlProducts);
         document.Save("Products.xml");

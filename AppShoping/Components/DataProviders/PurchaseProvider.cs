@@ -29,26 +29,26 @@ public class PurchaseProvider : IPurchaseProvider
     {
         return new List<PurchaseStatistics>
         {
-            new PurchaseStatistics { Id=1, Name="Jabłka", Price= 5.45M, BioFood = false, NameShop = "Auchan", Promotion = false },
-            new PurchaseStatistics { Id=2, Name="Jabłka", Price= 4.28M , BioFood = false, NameShop = "Auchan", Promotion = false },
-            new PurchaseStatistics { Id=3, Name="Jabłka", Price= 3.45M, BioFood = false, NameShop = "Biedronka", Promotion = true },
-            new PurchaseStatistics { Id=4, Name="Jabłka", Price= 3.45M, BioFood = false, NameShop = "Biedronka", Promotion = true },
-            new PurchaseStatistics { Id=5, Name="Jabłka", Price= 5.25M, BioFood = true, NameShop = "Lidl", Promotion = true },
-            new PurchaseStatistics { Id=6, Name="Jabłka", Price= 6.00M, BioFood = true, NameShop = "Biedronka", Promotion = false },
-            new PurchaseStatistics { Id=7, Name="Jabłka", Price= 4.15M, BioFood = true, NameShop = "Auchan", Promotion = true },
-            new PurchaseStatistics { Id=8, Name="Jabłka", Price= 7.20M, BioFood = true, NameShop = "Lidl", Promotion = false },
-            new PurchaseStatistics { Id=9, Name="Marchew", Price= 3.85M, BioFood = true, NameShop = "Auchan", Promotion = false },
-            new PurchaseStatistics { Id=10, Name="Marchew", Price= 5.20M, BioFood = true, NameShop = "Auchan", Promotion = false },
-            new PurchaseStatistics { Id=11, Name="Awokado", Price= 8.45M, BioFood = false, NameShop = "Auchan", Promotion = false },
-            new PurchaseStatistics { Id=12, Name="Banan", Price= 7.80M, BioFood = false, NameShop = "Lidl", Promotion = false },
-            new PurchaseStatistics { Id=13, Name="Pomarancza", Price= 6.80M, BioFood = false, NameShop = "Biedronka", Promotion = true },
-            new PurchaseStatistics { Id=14, Name="Mango", Price= 8.95M, BioFood = false, NameShop = "Biedronka", Promotion = true },
-            new PurchaseStatistics { Id=15, Name="Mango", Price= 10.99M, BioFood = false, NameShop = "Lidl", Promotion = false },
-            new PurchaseStatistics { Id=16, Name="Pomarancza", Price= 12M, BioFood = false, NameShop = "Żabka", Promotion = false },
-            new PurchaseStatistics { Id=17, Name="Banan", Price= 2.99M, BioFood = false, NameShop = "Auchan", Promotion = true },
-            new PurchaseStatistics { Id=18, Name="Maslo", Price= 8.25M, BioFood = false, NameShop = "Biedronka", Promotion = true },
-            new PurchaseStatistics { Id=19, Name="Mleko", Price= 2.89M, BioFood = false, NameShop = "Biedronka", Promotion = true },
-            new PurchaseStatistics { Id=20, Name="Mleko", Price= 3.69M, BioFood = false, NameShop = "Lidl", Promotion = false }
+            new PurchaseStatistics { Id=1, Name="Jabłka", Price= 5.45M, BioFood = false, ShopName = "Auchan", Promotion = false },
+            new PurchaseStatistics { Id=2, Name="Jabłka", Price= 4.28M , BioFood = false, ShopName = "Auchan", Promotion = false },
+            new PurchaseStatistics { Id=3, Name="Jabłka", Price= 3.45M, BioFood = false, ShopName = "Biedronka", Promotion = true },
+            new PurchaseStatistics { Id=4, Name="Jabłka", Price= 3.45M, BioFood = false, ShopName = "Biedronka", Promotion = true },
+            new PurchaseStatistics { Id=5, Name="Jabłka", Price= 5.25M, BioFood = true, ShopName = "Lidl", Promotion = true },
+            new PurchaseStatistics { Id=6, Name="Jabłka", Price= 6.00M, BioFood = true, ShopName = "Biedronka", Promotion = false },
+            new PurchaseStatistics { Id=7, Name="Jabłka", Price= 4.15M, BioFood = true, ShopName = "Auchan", Promotion = true },
+            new PurchaseStatistics { Id=8, Name="Jabłka", Price= 7.20M, BioFood = true, ShopName = "Lidl", Promotion = false },
+            new PurchaseStatistics { Id=9, Name="Marchew", Price= 3.85M, BioFood = true, ShopName = "Auchan", Promotion = false },
+            new PurchaseStatistics { Id=10, Name="Marchew", Price= 5.20M, BioFood = true, ShopName = "Auchan", Promotion = false },
+            new PurchaseStatistics { Id=11, Name="Awokado", Price= 8.45M, BioFood = false, ShopName = "Auchan", Promotion = false },
+            new PurchaseStatistics { Id=12, Name="Banan", Price= 7.80M, BioFood = false, ShopName = "Lidl", Promotion = false },
+            new PurchaseStatistics { Id=13, Name="Pomarancza", Price= 6.80M, BioFood = false, ShopName = "Biedronka", Promotion = true },
+            new PurchaseStatistics { Id=14, Name="Mango", Price= 8.95M, BioFood = false, ShopName = "Biedronka", Promotion = true },
+            new PurchaseStatistics { Id=15, Name="Mango", Price= 10.99M, BioFood = false, ShopName = "Lidl", Promotion = false },
+            new PurchaseStatistics { Id=16, Name="Pomarancza", Price= 12M, BioFood = false, ShopName = "Żabka", Promotion = false },
+            new PurchaseStatistics { Id=17, Name="Banan", Price= 2.99M, BioFood = false, ShopName = "Auchan", Promotion = true },
+            new PurchaseStatistics { Id=18, Name="Maslo", Price= 8.25M, BioFood = false, ShopName = "Biedronka", Promotion = true },
+            new PurchaseStatistics { Id=19, Name="Mleko", Price= 2.89M, BioFood = false, ShopName = "Biedronka", Promotion = true },
+            new PurchaseStatistics { Id=20, Name="Mleko", Price= 3.69M, BioFood = false, ShopName = "Lidl", Promotion = false }
         };
     }
 
@@ -96,7 +96,7 @@ public class PurchaseProvider : IPurchaseProvider
         {
             Id = product.Id,
             Name = product.Name,
-            NameShop = product.NameShop,
+            ShopName = product.ShopName,
         }).ToList();
         return list;
     }
@@ -111,7 +111,7 @@ public class PurchaseProvider : IPurchaseProvider
     {
         var purchasedProduct = _purchaseRepository.GetAll();
         return purchasedProduct
-            .OrderBy(x => x.NameShop)
+            .OrderBy(x => x.ShopName)
             .ThenBy(x => x.Name)
             .ThenBy(x => x.Price)
             .ToList();
@@ -126,7 +126,7 @@ public class PurchaseProvider : IPurchaseProvider
     public List<PurchaseStatistics> WhereNameShopIsAndPromotionIs(string nameShop, bool promotion)
     {
         var purchasedProduct = _purchaseRepository.GetAll();
-        return purchasedProduct.Where(x => x.NameShop == nameShop && x.Promotion == promotion).ToList();
+        return purchasedProduct.Where(x => x.ShopName == nameShop && x.Promotion == promotion).ToList();
     }
 
     public List<PurchaseStatistics> OrderByNameAndPrice()

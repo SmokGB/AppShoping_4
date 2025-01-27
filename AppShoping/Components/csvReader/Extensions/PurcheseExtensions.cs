@@ -15,7 +15,7 @@ namespace AppShoping.Components.csvReader.Extensions
                     Name = columns[0],
                     Price = double.Parse(columns[1],CultureInfo.InvariantCulture),
                     BioFood = bool.Parse(columns[2]),
-                    NameShop = columns[3],
+                    ShopName = columns[3],
                     Promotion = bool.Parse(columns[4]),
                 };
             }
